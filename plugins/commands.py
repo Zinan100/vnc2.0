@@ -49,7 +49,8 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('🖥️ Source code 😍', callback_data='sources')
             ],[
-            InlineKeyboardButton('💌 Aʙᴏᴜᴛ Aɴᴅ Iɴғᴏ 💌', callback_data= 'about')
+            InlineKeyboardButton('💌 Aʙᴏut 💌', callback_data= 'about'),
+            InlineKeyboardButton('💌 help 💌', callback_data='help')
             ],[
             InlineKeyboardButton('❌ Cʟᴏꜱᴇ ❌', callback_data='close_data')
         ]]
@@ -91,17 +92,18 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('♚ Bᴏᴛ Oᴡɴᴇʀ', callback_data="owner_info"),
-                    InlineKeyboardButton('⌬ Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK)
-                ],[
-                    InlineKeyboardButton('〄 Hᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('⍟ Aʙᴏᴜᴛ', callback_data='about'),
-                    InlineKeyboardButton('Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ ☌', switch_inline_query_current_chat='')
-                ],[
-                    InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
-                  ]]
+            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f"https://t.me/{temp.U_NAME}?startgroup=true")
+            ],[
+            InlineKeyboardButton('💥 Mᴏᴠɪᴇ Uᴘᴅᴀᴛᴇs 💥', url='https://t.me/+HMo4S0heOUllMWVl'),
+            InlineKeyboardButton('🍿 Movie Group 📀', url='https://t.me/tamilmovies4Krio')
+            ],[
+            InlineKeyboardButton('🖥️ Source code 😍', callback_data='sources')
+            ],[
+            InlineKeyboardButton('💌 Aʙᴏut 💌', callback_data= 'about'),
+            InlineKeyboardButton('💌 help 💌', callback_data='help')
+            ],[
+            InlineKeyboardButton('❌ Cʟᴏꜱᴇ ❌', callback_data='close_data')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -153,8 +155,6 @@ async def start(client, message):
                          [
                           InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
                           InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                       ],[
-                          InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/creatorbeatz")
                          ]
                         ]
                     )
@@ -172,8 +172,6 @@ async def start(client, message):
                          [
                           InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
                           InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                       ],[
-                          InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/creatorbeatz")
                          ]
                         ]
                     )
@@ -274,6 +272,7 @@ async def start(client, message):
             if IS_VERIFY and not await check_verification(client, message.from_user.id):
                 btn = [[
                     InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
+                ],[
                     InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
                 ]]
                 await message.reply_text(
@@ -291,8 +290,6 @@ async def start(client, message):
                      [
                       InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
                       InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                   ],[
-                      InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/creatorbeatz")
                      ]
                     ]
                 )
@@ -327,6 +324,7 @@ async def start(client, message):
     if IS_VERIFY and not await check_verification(client, message.from_user.id):
         btn = [[
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
+        ],[
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
         ]]
         await message.reply_text(
@@ -345,16 +343,14 @@ async def start(client, message):
              [
               InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
               InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-           ],[
-              InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/creatorbeatz")
              ]
             ]
         )
     )
                     
 
-@Client.on_message(filters.command('channel') & filters.user(ADMINS))
-async def channel_info(bot, message):
+@Client.on_message(filters.command('indexes'))
+async def index_info(bot, message):
            
     """Send basic information of channel"""
     if isinstance(CHANNELS, (int, str)):
@@ -818,7 +814,7 @@ async def deletemultiplefiles(bot, message):
         parse_mode=enums.ParseMode.HTML
     )
 
-@Client.on_message(filters.command("shortlink") & filters.user(ADMINS))
+@Client.on_message(filters.command("shortlink"))
 async def shortlink(bot, message):
     chat_type = message.chat.type
     if chat_type == enums.ChatType.PRIVATE:
