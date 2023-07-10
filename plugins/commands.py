@@ -22,7 +22,7 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
-                    InlineKeyboardButton('Need a bot like this', url="t.me/zib_bots")
+                    InlineKeyboardButton('Need a bot like this', url="t.me/creatorrio")
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -47,7 +47,7 @@ async def start(client, message):
             InlineKeyboardButton('💥 Mᴏᴠɪᴇ Uᴘᴅᴀᴛᴇs 💥', url='https://t.me/+HMo4S0heOUllMWVl'),
             InlineKeyboardButton('🍿 Movie Group 📀', url='https://t.me/tamilmovies4Krio')
             ],[
-            InlineKeyboardButton('🖥️ Source code 😍', callback_data='sources')
+            InlineKeyboardButton('🖥️ Source code 😍', callback_data='SOURCE_TXT')
             ],[
             InlineKeyboardButton('💌 Aʙᴏut 💌', callback_data= 'about'),
             InlineKeyboardButton('💌 help 💌', callback_data='help')
@@ -97,7 +97,7 @@ async def start(client, message):
             InlineKeyboardButton('💥 Mᴏᴠɪᴇ Uᴘᴅᴀᴛᴇs 💥', url='https://t.me/+HMo4S0heOUllMWVl'),
             InlineKeyboardButton('🍿 Movie Group 📀', url='https://t.me/tamilmovies4Krio')
             ],[
-            InlineKeyboardButton('🖥️ Source code 😍', callback_data='sources')
+            InlineKeyboardButton('🖥️ Source code 😍', callback_data='SOURCE_TXT')
             ],[
             InlineKeyboardButton('💌 Aʙᴏut 💌', callback_data= 'about'),
             InlineKeyboardButton('💌 help 💌', callback_data='help')
