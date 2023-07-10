@@ -21,6 +21,7 @@ class Database:
             ),
         )
 
+    
     def new_group(self, id, title):
         return dict(
             id = id,
@@ -66,7 +67,28 @@ class Database:
             ban_reason=''
         )
         await self.col.update_one({'id': id}, {'$set': {'ban_status': ban_status}})
-    
+
+    # Handler function to save URL for a group
+    async def save_url(chat_id, url):
+    group_id = str(chat_id)
+
+    # Check if the group exists in the database
+    group = self.col.find_one({'group_id': group_id})
+    if group:
+        # Update the group's URLs
+        self.col.update_one(
+            {'group_id': group_id},
+            {'$push': {'urls': url}}
+        )
+    else:
+        # Create a new group with the URL
+        new_group = {
+            'group_id': group_id,
+            'group_name': 'Group Name',
+            'urls': [url]
+        }
+        self.col.insert_one(new_group)
+
     async def ban_user(self, user_id, ban_reason="No Reason"):
         ban_status = dict(
             is_banned=True,
