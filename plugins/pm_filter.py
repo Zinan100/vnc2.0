@@ -1145,7 +1145,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('💥 Mᴏᴠɪᴇ Uᴘᴅᴀᴛᴇs 💥', url='https://t.me/+HMo4S0heOUllMWVl'),
             InlineKeyboardButton('🍿 Movie Group 📀', url='https://t.me/tamilmovies4Krio')
             ],[
-            InlineKeyboardButton('🖥️ Source code 😍', callback_data='sources')
+            InlineKeyboardButton('🖥️ Source code 😍', callback_data='SOURCE_TXT')
             ],[
             InlineKeyboardButton('💌 Aʙᴏut 💌', callback_data= 'about'),
             InlineKeyboardButton('💌 help 💌', callback_data='help')
@@ -1418,7 +1418,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "owner_info":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
-                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="t.me/creatorbeatz")
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="t.me/creatorrio")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
