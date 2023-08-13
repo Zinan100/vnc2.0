@@ -197,7 +197,7 @@ Nᴀᴍᴇ - {}"""
 
 <b>
 ╭─────── • ◆ • ───────╮
- My best friend :  <a href="{message from.usermention}">This person</a>
+ Join 👉 :  <a href="t.me/Tamilmovies4Krio">MOVIE REQUEST</a>
 ╰─────── • ◆ • ───────╯
 
 =========== • ✠ • ===========
